@@ -2,13 +2,18 @@
 import pygame
 
 
+# Initialize Pygame
+pygame.init()
+
 # colors that are going to be used in the program, set with rgb
 GREEN = (100, 250, 140)
 DARKGREY = (70, 70, 70)
 WHITE = (250, 250, 250)
 
-# Initialize Pygame
-pygame.init()
+# frames per second that the game will run in
+fps = 200  # this was created during setup but is not used in this version of this component
+clock = pygame.time.Clock()  # this was created during setup but is not used in this version of this component
+
 # creating the display
 display_width = 700
 display_height = 900
@@ -21,7 +26,8 @@ pygame.display.set_caption('Mario Kart: Renegade Road Edition')
 # exiting variable allows game loop to run and allows game to close when exiting = true
 exiting = False
 while not exiting:
-
+    # sets the fps
+    clock.tick(fps)  # this was created during setup but is not used in this version of this component
     for event in pygame.event.get():
         # allows the player to quit by pressing q
         if event.type == pygame.QUIT:
